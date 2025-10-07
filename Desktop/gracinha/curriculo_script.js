@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Função que cria um emoji e o anima
     function createAnimatedEmoji() {
         const emoji = document.createElement('span');
-        const emojis = ['🐐', '🐺'];
+        const emojis = ['🐑', '🐺'];
         const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
 
         emoji.textContent = randomEmoji;
