@@ -1,14 +1,12 @@
 import path from "path";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import { cloudflare } from "@cloudflare/vite-plugin";
 import { mochaPlugins } from "@getmocha/vite-plugins";
 
 export default defineConfig({
   plugins: [
     ...mochaPlugins(process.env as any),
-    react(),
-    cloudflare()
+    react()
   ],
 
   server: {
@@ -16,7 +14,7 @@ export default defineConfig({
   },
 
   build: {
-    outDir: "dist", // garante que o build vai para /dist
+    outDir: "dist",
     chunkSizeWarningLimit: 5000,
   },
 
@@ -26,5 +24,6 @@ export default defineConfig({
     },
   },
 
-  base: "./", // <-- ESSENCIAL pro deploy na Vercel
+  // Base para funcionar em qualquer domínio (Vercel, custom domain, etc)
+  base: "./"
 });
